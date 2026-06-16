@@ -1,5 +1,6 @@
 import { useState } from "react";
 import TaskDetailsModal, { TaskDetail } from "./TaskDetailsModal";
+import AddTaskModal, { NewTaskData } from "./AddTaskModal";
 
 type Status = "To Do" | "In Progress" | "Completed";
 
@@ -80,6 +81,23 @@ export default function TaskKanban() {
   const [overCol, setOverCol] = useState<Status | null>(null);
   const [selected, setSelected] = useState<TaskDetail | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
+  const [addOpen, setAddOpen] = useState(false);
+
+  const addTask = (data: NewTaskData) => {
+    setTasks((prev) => [
+      {
+        id: Math.max(0, ...prev.map((t) => t.id)) + 1,
+        title: data.title,
+        tag: data.tag,
+        tagColor: data.tagColor,
+        due: "Today",
+        assignees: [data.assignee],
+        comments: 0,
+        status: "To Do",
+      },
+      ...prev,
+    ]);
+  };
 
   const countFor = (s: Status) => tasks.filter((t) => t.status === s).length;
   const visibleColumns =
@@ -148,7 +166,10 @@ export default function TaskKanban() {
             </svg>
             Filter &amp; Short
           </button>
-          <button className="inline-flex items-center gap-2 rounded-lg bg-brand-500 px-4 py-2.5 text-theme-sm font-medium text-white transition-colors hover:bg-brand-600">
+          <button
+            onClick={() => setAddOpen(true)}
+            className="inline-flex items-center gap-2 rounded-lg bg-brand-500 px-4 py-2.5 text-theme-sm font-medium text-white transition-colors hover:bg-brand-600"
+          >
             Add New Task
             <svg className="size-5" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.7">
               <path d="M10 4v12M4 10h12" strokeLinecap="round" />
@@ -265,6 +286,11 @@ export default function TaskKanban() {
         task={selected}
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
+      />
+      <AddTaskModal
+        isOpen={addOpen}
+        onClose={() => setAddOpen(false)}
+        onCreate={addTask}
       />
     </div>
   );

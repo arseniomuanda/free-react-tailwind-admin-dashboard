@@ -1,4 +1,5 @@
 import { useState } from "react";
+import AddTaskModal, { NewTaskData } from "./AddTaskModal";
 
 type Status = "To Do" | "In Progress" | "Completed";
 
@@ -67,6 +68,22 @@ export default function TaskListBoard() {
   const [tasks, setTasks] = useState<Task[]>(initialTasks);
   const [tab, setTab] = useState<(typeof tabs)[number]>("All Tasks");
   const [dragId, setDragId] = useState<number | null>(null);
+  const [addOpen, setAddOpen] = useState(false);
+
+  const addTask = (data: NewTaskData) => {
+    setTasks((prev) => [
+      {
+        id: Math.max(0, ...prev.map((t) => t.id)) + 1,
+        title: data.title,
+        tag: data.tag,
+        tagColor: data.tagColor,
+        due: "Today",
+        assignee: data.assignee.avatar,
+        status: "To Do",
+      },
+      ...prev,
+    ]);
+  };
 
   const toggle = (id: number) =>
     setTasks((prev) => prev.map((t) => (t.id === id ? { ...t, done: !t.done } : t)));
@@ -123,7 +140,10 @@ export default function TaskListBoard() {
             </svg>
             Filter &amp; Short
           </button>
-          <button className="inline-flex items-center gap-2 rounded-lg bg-brand-500 px-4 py-2.5 text-theme-sm font-medium text-white transition-colors hover:bg-brand-600">
+          <button
+            onClick={() => setAddOpen(true)}
+            className="inline-flex items-center gap-2 rounded-lg bg-brand-500 px-4 py-2.5 text-theme-sm font-medium text-white transition-colors hover:bg-brand-600"
+          >
             Add New Task
             <svg className="size-5" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.7">
               <path d="M10 4v12M4 10h12" strokeLinecap="round" />
@@ -227,6 +247,12 @@ export default function TaskListBoard() {
           );
         })}
       </div>
+
+      <AddTaskModal
+        isOpen={addOpen}
+        onClose={() => setAddOpen(false)}
+        onCreate={addTask}
+      />
     </div>
   );
 }
