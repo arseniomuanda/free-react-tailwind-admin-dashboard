@@ -20,6 +20,7 @@ import { ScrollToTop } from "./components/common/ScrollToTop";
 import Home from "./pages/Dashboard/Home";
 import Saas from "./pages/Dashboard/Saas";
 import Finance from "./pages/Dashboard/Finance";
+import Sales from "./pages/Dashboard/Sales";
 import TextGenerator from "./pages/AiAssistant/TextGenerator";
 import Chat from "./pages/Chat/Chat";
 import LayoutOne from "./pages/Layouts/LayoutOne";
@@ -44,6 +45,7 @@ export default function App() {
             <Route index path="/" element={<Home />} />
             <Route path="/saas" element={<Saas />} />
             <Route path="/finance" element={<Finance />} />
+            <Route path="/sales" element={<Sales />} />
             <Route path="/text-generator" element={<TextGenerator />} />
 
             {/* Chat */}
