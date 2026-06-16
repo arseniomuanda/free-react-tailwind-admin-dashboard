@@ -8,6 +8,7 @@ import {
   CalenderIcon,
   ChatIcon,
   ChevronDownIcon,
+  EnvelopeIcon,
   GridIcon,
   HorizontaLDots,
   ListIcon,
@@ -60,6 +61,14 @@ const navItems: NavItem[] = [
     icon: <ChatIcon />,
     name: "Chat",
     path: "/chat",
+  },
+  {
+    icon: <EnvelopeIcon />,
+    name: "Email",
+    subItems: [
+      { name: "Inbox", path: "/inbox", pro: false, new: true },
+      { name: "Inbox Details", path: "/inbox-details", pro: false, new: true },
+    ],
   },
   {
     icon: <CalenderIcon />,

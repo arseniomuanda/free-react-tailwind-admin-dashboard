@@ -28,6 +28,8 @@ import LayoutThree from "./pages/Layouts/LayoutThree";
 import LayoutFour from "./pages/Layouts/LayoutFour";
 import LayoutFive from "./pages/Layouts/LayoutFive";
 import LayoutSix from "./pages/Layouts/LayoutSix";
+import Inbox from "./pages/Inbox/Inbox";
+import InboxDetails from "./pages/Inbox/InboxDetails";
 
 export default function App() {
   return (
@@ -44,6 +46,10 @@ export default function App() {
 
             {/* Chat */}
             <Route path="/chat" element={<Chat />} />
+
+            {/* Email */}
+            <Route path="/inbox" element={<Inbox />} />
+            <Route path="/inbox-details" element={<InboxDetails />} />
 
             {/* Layouts */}
             <Route path="/layout-one" element={<LayoutOne />} />
