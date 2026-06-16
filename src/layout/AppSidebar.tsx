@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router";
 
 // Assume these icons are imported from an icon library
 import {
+  BoltIcon,
   BoxCubeIcon,
   CalenderIcon,
   ChevronDownIcon,
@@ -33,6 +34,13 @@ const navItems: NavItem[] = [
       { name: "Ecommerce", path: "/", pro: false },
       { name: "SaaS", path: "/saas", pro: false, new: true },
       { name: "Finance", path: "/finance", pro: false, new: true },
+    ],
+  },
+  {
+    icon: <BoltIcon />,
+    name: "AI Assistant",
+    subItems: [
+      { name: "Text Generator", path: "/text-generator", pro: false, new: true },
     ],
   },
   {

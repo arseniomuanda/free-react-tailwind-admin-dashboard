@@ -20,6 +20,7 @@ import { ScrollToTop } from "./components/common/ScrollToTop";
 import Home from "./pages/Dashboard/Home";
 import Saas from "./pages/Dashboard/Saas";
 import Finance from "./pages/Dashboard/Finance";
+import TextGenerator from "./pages/AiAssistant/TextGenerator";
 
 export default function App() {
   return (
@@ -32,6 +33,7 @@ export default function App() {
             <Route index path="/" element={<Home />} />
             <Route path="/saas" element={<Saas />} />
             <Route path="/finance" element={<Finance />} />
+            <Route path="/text-generator" element={<TextGenerator />} />
 
             {/* Others Page */}
             <Route path="/profile" element={<UserProfiles />} />
