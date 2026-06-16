@@ -30,6 +30,8 @@ import LayoutFive from "./pages/Layouts/LayoutFive";
 import LayoutSix from "./pages/Layouts/LayoutSix";
 import Inbox from "./pages/Inbox/Inbox";
 import InboxDetails from "./pages/Inbox/InboxDetails";
+import SupportTickets from "./pages/Support/SupportTickets";
+import SupportTicketReply from "./pages/Support/SupportTicketReply";
 
 export default function App() {
   return (
@@ -50,6 +52,10 @@ export default function App() {
             {/* Email */}
             <Route path="/inbox" element={<Inbox />} />
             <Route path="/inbox-details" element={<InboxDetails />} />
+
+            {/* Support */}
+            <Route path="/support-tickets" element={<SupportTickets />} />
+            <Route path="/support-ticket-reply" element={<SupportTicketReply />} />
 
             {/* Layouts */}
             <Route path="/layout-one" element={<LayoutOne />} />
