@@ -16,13 +16,13 @@ interface FileRow {
 }
 
 const files: FileRow[] = [
-  { name: "Product demo final.mp4", type: "Video", size: "489 MB", modified: "Jan 12, 2027" },
-  { name: "Brand guidelines.pdf", type: "Document", size: "12 MB", modified: "Feb 03, 2027" },
-  { name: "Hero banner.png", type: "Image", size: "8 MB", modified: "Feb 18, 2027" },
-  { name: "Podcast episode 04.mp3", type: "Audio", size: "89 MB", modified: "Mar 22, 2027" },
-  { name: "Q2 report.pdf", type: "Document", size: "10 MB", modified: "Apr 09, 2027" },
-  { name: "Team offsite.jpg", type: "Image", size: "5 MB", modified: "May 14, 2027" },
-  { name: "Launch teaser.mp4", type: "Video", size: "245 MB", modified: "Jul 01, 2027" },
+  { name: "Video_947954.mp4", type: "Video", size: "89 MB", modified: "12 Jan, 2027" },
+  { name: "Travel.jpeg", type: "Image", size: "5 MB", modified: "19 Feb, 2027" },
+  { name: "Document.pdf", type: "Document", size: "10 MB", modified: "15 Mar, 2027" },
+  { name: "Video_947954_028.mp4", type: "Video", size: "489 MB", modified: "29 Apr, 2027" },
+  { name: "Mountain.png", type: "Image", size: "8 MB", modified: "20 May, 2027" },
+  { name: "Podcast_ep_04.mp3", type: "Audio", size: "89 MB", modified: "11 Jun, 2027" },
+  { name: "Q2_report.pdf", type: "Document", size: "12 MB", modified: "01 Jul, 2027" },
 ];
 
 const typeStyle: Record<FileType, string> = {
@@ -114,11 +114,19 @@ export default function RecentFilesTable() {
                   {file.modified}
                 </TableCell>
                 <TableCell className="py-3">
-                  <button className="text-gray-400 hover:text-brand-500">
-                    <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-                      <path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </button>
+                  <div className="flex items-center gap-2">
+                    <button className="text-gray-400 hover:text-error-500" title="Delete">
+                      <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                        <path d="M4 7h16M9 7V5a1 1 0 011-1h4a1 1 0 011 1v2m1 0v12a2 2 0 01-2 2H8a2 2 0 01-2-2V7" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </button>
+                    <button className="text-gray-400 hover:text-brand-500" title="View">
+                      <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" strokeLinejoin="round" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    </button>
+                  </div>
                 </TableCell>
               </TableRow>
             ))}
