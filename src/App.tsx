@@ -38,6 +38,7 @@ import SupportTickets from "./pages/Support/SupportTickets";
 import SupportTicketReply from "./pages/Support/SupportTicketReply";
 import TaskList from "./pages/Task/TaskList";
 import TaskKanban from "./pages/Task/TaskKanban";
+import FileManager from "./pages/FileManager/FileManager";
 
 export default function App() {
   return (
@@ -67,6 +68,9 @@ export default function App() {
             {/* Task */}
             <Route path="/task-list" element={<TaskList />} />
             <Route path="/task-kanban" element={<TaskKanban />} />
+
+            {/* File Manager */}
+            <Route path="/file-manager" element={<FileManager />} />
 
             {/* Layouts */}
             <Route path="/layout-one" element={<LayoutOne />} />

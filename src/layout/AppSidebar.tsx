@@ -9,6 +9,7 @@ import {
   ChatIcon,
   ChevronDownIcon,
   EnvelopeIcon,
+  FolderIcon,
   GridIcon,
   HorizontaLDots,
   ListIcon,
@@ -94,6 +95,11 @@ const navItems: NavItem[] = [
       { name: "Task List", path: "/task-list", pro: false, new: true },
       { name: "Task Kanban", path: "/task-kanban", pro: false, new: true },
     ],
+  },
+  {
+    icon: <FolderIcon />,
+    name: "File Manager",
+    path: "/file-manager",
   },
   {
     name: "Pages",
