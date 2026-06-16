@@ -4,6 +4,7 @@ import SignUp from "./pages/AuthPages/SignUp";
 import TwoStepVerification from "./pages/AuthPages/TwoStepVerification";
 import ResetPassword from "./pages/AuthPages/ResetPassword";
 import NotFound from "./pages/OtherPage/NotFound";
+import Maintenance from "./pages/OtherPage/Maintenance";
 import UserProfiles from "./pages/UserProfiles";
 import Videos from "./pages/UiElements/Videos";
 import Images from "./pages/UiElements/Images";
@@ -104,6 +105,9 @@ export default function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/two-step-verification" element={<TwoStepVerification />} />
+
+          {/* Utility */}
+          <Route path="/maintenance" element={<Maintenance />} />
 
           {/* Fallback Route */}
           <Route path="*" element={<NotFound />} />

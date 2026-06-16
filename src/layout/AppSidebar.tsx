@@ -101,6 +101,7 @@ const navItems: NavItem[] = [
     subItems: [
       { name: "Blank Page", path: "/blank", pro: false },
       { name: "404 Error", path: "/error-404", pro: false },
+      { name: "Maintenance", path: "/maintenance", pro: false, new: true },
     ],
   },
 ];
