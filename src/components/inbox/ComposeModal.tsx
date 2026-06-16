@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Modal } from "../ui/modal";
 import { PaperPlaneIcon } from "../../icons";
+import RichTextEditor from "./RichTextEditor";
 
 interface Props {
   isOpen: boolean;
@@ -101,10 +102,7 @@ export default function ComposeModal({ isOpen, onClose }: Props) {
             <input type="text" placeholder="Subject" className={inputClass} />
           </div>
 
-          <textarea
-            placeholder="Write your message…"
-            className="min-h-[180px] w-full flex-1 resize-y rounded-lg border border-gray-300 bg-transparent px-4 py-3 text-theme-sm text-gray-800 placeholder:text-gray-400 focus:border-brand-300 focus:outline-none focus:ring-2 focus:ring-brand-500/20 dark:border-gray-700 dark:text-white/90"
-          ></textarea>
+          <RichTextEditor className="min-h-[200px] flex-1" />
         </div>
 
         {/* Footer */}
