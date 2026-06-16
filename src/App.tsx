@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router";
 import SignIn from "./pages/AuthPages/SignIn";
 import SignUp from "./pages/AuthPages/SignUp";
+import TwoStepVerification from "./pages/AuthPages/TwoStepVerification";
+import ResetPassword from "./pages/AuthPages/ResetPassword";
 import NotFound from "./pages/OtherPage/NotFound";
 import UserProfiles from "./pages/UserProfiles";
 import Videos from "./pages/UiElements/Videos";
@@ -33,6 +35,8 @@ import Inbox from "./pages/Inbox/Inbox";
 import InboxDetails from "./pages/Inbox/InboxDetails";
 import SupportTickets from "./pages/Support/SupportTickets";
 import SupportTicketReply from "./pages/Support/SupportTicketReply";
+import TaskList from "./pages/Task/TaskList";
+import TaskKanban from "./pages/Task/TaskKanban";
 
 export default function App() {
   return (
@@ -58,6 +62,10 @@ export default function App() {
             {/* Support */}
             <Route path="/support-tickets" element={<SupportTickets />} />
             <Route path="/support-ticket-reply" element={<SupportTicketReply />} />
+
+            {/* Task */}
+            <Route path="/task-list" element={<TaskList />} />
+            <Route path="/task-kanban" element={<TaskKanban />} />
 
             {/* Layouts */}
             <Route path="/layout-one" element={<LayoutOne />} />
@@ -94,6 +102,8 @@ export default function App() {
           {/* Auth Layout */}
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/two-step-verification" element={<TwoStepVerification />} />
 
           {/* Fallback Route */}
           <Route path="*" element={<NotFound />} />

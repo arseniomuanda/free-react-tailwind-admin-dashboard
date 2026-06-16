@@ -16,6 +16,7 @@ import {
   PieChartIcon,
   PlugInIcon,
   TableIcon,
+  TaskIcon,
   UserCircleIcon,
 } from "../icons";
 import { useSidebar } from "../context/SidebarContext";
@@ -87,6 +88,14 @@ const navItems: NavItem[] = [
     subItems: [{ name: "Basic Tables", path: "/basic-tables", pro: false }],
   },
   {
+    icon: <TaskIcon />,
+    name: "Task",
+    subItems: [
+      { name: "Task List", path: "/task-list", pro: false, new: true },
+      { name: "Task Kanban", path: "/task-kanban", pro: false, new: true },
+    ],
+  },
+  {
     name: "Pages",
     icon: <PageIcon />,
     subItems: [
@@ -123,6 +132,13 @@ const othersItems: NavItem[] = [
     subItems: [
       { name: "Sign In", path: "/signin", pro: false },
       { name: "Sign Up", path: "/signup", pro: false },
+      { name: "Reset Password", path: "/reset-password", pro: false, new: true },
+      {
+        name: "Two Step Verification",
+        path: "/two-step-verification",
+        pro: false,
+        new: true,
+      },
     ],
   },
 ];
