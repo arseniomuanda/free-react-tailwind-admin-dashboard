@@ -6,6 +6,7 @@ import {
   BoltIcon,
   BoxCubeIcon,
   CalenderIcon,
+  ChatIcon,
   ChevronDownIcon,
   GridIcon,
   HorizontaLDots,
@@ -42,6 +43,23 @@ const navItems: NavItem[] = [
     subItems: [
       { name: "Text Generator", path: "/text-generator", pro: false, new: true },
     ],
+  },
+  {
+    icon: <BoxCubeIcon />,
+    name: "Layouts",
+    subItems: [
+      { name: "Layout One", path: "/layout-one", pro: false, new: true },
+      { name: "Layout Two", path: "/layout-two", pro: false, new: true },
+      { name: "Layout Three", path: "/layout-three", pro: false, new: true },
+      { name: "Layout Four", path: "/layout-four", pro: false, new: true },
+      { name: "Layout Five", path: "/layout-five", pro: false, new: true },
+      { name: "Layout Six", path: "/layout-six", pro: false, new: true },
+    ],
+  },
+  {
+    icon: <ChatIcon />,
+    name: "Chat",
+    path: "/chat",
   },
   {
     icon: <CalenderIcon />,

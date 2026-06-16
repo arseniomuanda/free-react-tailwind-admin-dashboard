@@ -21,6 +21,13 @@ import Home from "./pages/Dashboard/Home";
 import Saas from "./pages/Dashboard/Saas";
 import Finance from "./pages/Dashboard/Finance";
 import TextGenerator from "./pages/AiAssistant/TextGenerator";
+import Chat from "./pages/Chat/Chat";
+import LayoutOne from "./pages/Layouts/LayoutOne";
+import LayoutTwo from "./pages/Layouts/LayoutTwo";
+import LayoutThree from "./pages/Layouts/LayoutThree";
+import LayoutFour from "./pages/Layouts/LayoutFour";
+import LayoutFive from "./pages/Layouts/LayoutFive";
+import LayoutSix from "./pages/Layouts/LayoutSix";
 
 export default function App() {
   return (
@@ -34,6 +41,17 @@ export default function App() {
             <Route path="/saas" element={<Saas />} />
             <Route path="/finance" element={<Finance />} />
             <Route path="/text-generator" element={<TextGenerator />} />
+
+            {/* Chat */}
+            <Route path="/chat" element={<Chat />} />
+
+            {/* Layouts */}
+            <Route path="/layout-one" element={<LayoutOne />} />
+            <Route path="/layout-two" element={<LayoutTwo />} />
+            <Route path="/layout-three" element={<LayoutThree />} />
+            <Route path="/layout-four" element={<LayoutFour />} />
+            <Route path="/layout-five" element={<LayoutFive />} />
+            <Route path="/layout-six" element={<LayoutSix />} />
 
             {/* Others Page */}
             <Route path="/profile" element={<UserProfiles />} />
