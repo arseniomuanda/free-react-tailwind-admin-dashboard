@@ -18,6 +18,8 @@ import Blank from "./pages/Blank";
 import AppLayout from "./layout/AppLayout";
 import { ScrollToTop } from "./components/common/ScrollToTop";
 import Home from "./pages/Dashboard/Home";
+import Saas from "./pages/Dashboard/Saas";
+import Finance from "./pages/Dashboard/Finance";
 
 export default function App() {
   return (
@@ -28,6 +30,8 @@ export default function App() {
           {/* Dashboard Layout */}
           <Route element={<AppLayout />}>
             <Route index path="/" element={<Home />} />
+            <Route path="/saas" element={<Saas />} />
+            <Route path="/finance" element={<Finance />} />
 
             {/* Others Page */}
             <Route path="/profile" element={<UserProfiles />} />
