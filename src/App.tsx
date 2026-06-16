@@ -8,6 +8,7 @@ import Calendar from "./pages/Calendar";
 import Ecommerce from "./pages/Dashboard/ECommerce";
 import Saas from "./pages/Dashboard/Saas";
 import Finance from "./pages/Dashboard/Finance";
+import TextGenerator from "./pages/AiAssistant/TextGenerator";
 import FormElements from "./pages/Forms/FormElements";
 import NotFound from "./pages/OtherPage/NotFound";
 import BasicTables from "./pages/Tables/BasicTables";
@@ -29,6 +30,7 @@ export default function App() {
             <Route index path="/" element={<Ecommerce />} />
             <Route path="/saas" element={<Saas />} />
             <Route path="/finance" element={<Finance />} />
+            <Route path="/text-generator" element={<TextGenerator />} />
             {/* Others Page */}
             <Route path="/profile" element={<UserProfiles />} />
             <Route path="/calendar" element={<Calendar />} />
